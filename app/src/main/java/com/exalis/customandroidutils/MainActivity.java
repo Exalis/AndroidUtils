@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import androidx.appcompat.app.AppCompatActivity;
 import com.exalis.androidutils.CustomSnackbar;
+import com.exalis.androidutils.CustomToast;
 import com.exalis.customandroidutils.databinding.MainActivityBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,5 +22,12 @@ public class MainActivity extends AppCompatActivity {
         binding.btnSucess.setOnClickListener(view ->{
             CustomSnackbar.makeSuccessSnackbar("Bravo", this, binding.getRoot());
         });
+        binding.btnSucessToast.setOnClickListener(view ->{
+            CustomToast.makeSuccessToast(this, "Youpiiiii");
+        });
+        binding.btnFailureToast.setOnClickListener(view ->{
+            CustomToast.makeFailureToast(this, "Ha miiiiiiiiiiince");
+        });
+
     }
 }

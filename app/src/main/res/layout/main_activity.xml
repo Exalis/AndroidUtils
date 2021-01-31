@@ -15,4 +15,14 @@
 	        android:layout_height="wrap_content"
 	        android:id="@+id/btnFailure"
 	        android:text="Make Failure Snackbar"/>
+
+	<Button android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/btnSucessToast"
+	        android:text="Make Success Toast"/>
+
+	<Button android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/btnFailureToast"
+	        android:text="Make Failure Toast"/>
 </LinearLayout>

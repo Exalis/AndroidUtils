@@ -23,7 +23,6 @@ public class CustomSnackbar {
         if(offsetValues.length > 0)
             addOffset(offsetValues, snackbar);
 
-        setSnackBarGravity(snackbar, Gravity.TOP);
         snackbar.show();
     }
 
