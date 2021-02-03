@@ -75,7 +75,7 @@ public class ChoosingPictureHandler {
     private Bitmap onImageCaptureResult(int resultCode, Intent data)
             throws IllegalStateException, IOException {
         if(resultCode == RESULT_OK){
-            return decodeBitmapFromUri(imageUri);
+            return decodeBitmapFromUri(activity, imageUri);
         }else{
             throw new IllegalStateException("Result is null");
         }
@@ -83,18 +83,22 @@ public class ChoosingPictureHandler {
 
     private Bitmap onPickImageResult(int resultCode, Intent data) throws IOException {
         if(resultCode == RESULT_OK){
-            Uri filepath = data.getData();
+            imageUri = data.getData();
 
-            return decodeBitmapFromUri(filepath);
+            return decodeBitmapFromUri(activity, imageUri);
         }else{
             throw new IOException();
         }
     }
 
-    private Bitmap decodeBitmapFromUri(Uri uri) throws IOException {
+    public static Bitmap decodeBitmapFromUri(Activity activity, Uri uri) throws IOException {
         ImageDecoder.Source source =
                 ImageDecoder.createSource(activity.getContentResolver(), uri);
         Bitmap bitmap = ImageDecoder.decodeBitmap(source);
         return bitmap;
+    }
+
+    public Uri getImageUri() {
+        return imageUri;
     }
 }

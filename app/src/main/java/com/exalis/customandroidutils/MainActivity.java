@@ -2,6 +2,7 @@ package com.exalis.customandroidutils;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.Nullable;
@@ -49,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bitmap = null;
         try {
-            bitmap = choosingPictureHandler.getBitmapResult(requestCode, resultCode, data);
+            Bitmap bitmap = choosingPictureHandler.getBitmapResult(requestCode, resultCode, data);
 
             binding.image.setVisibility(View.VISIBLE);
             binding.image.setImageBitmap(bitmap);
