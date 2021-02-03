@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="25dp">
+
+	<ImageView android:layout_width="match_parent"
+	           android:layout_height="80dp"
+	           android:src="@drawable/search_image"
+	           android:tint="@color/colorPrimaryBlue"
+	           tools:ignore="UseAppTint"
+	           android:elevation="10dp"/>
+
+	<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			xmlns:app="http://schemas.android.com/apk/res-auto"
+			app:cardCornerRadius="15dp"
+			app:cardBackgroundColor="@color/white"
+			android:elevation="1dp"
+			android:layout_marginTop="40dp">
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+		>
+
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="Ajouter une photo"
+					android:layout_gravity="top"
+					android:maxLines="1"
+					android:autoSizeTextType="uniform"
+					android:gravity="center|bottom"
+					android:textColor="@color/colorPrimary"
+					android:padding="20dp"
+					android:layout_marginTop="15dp"
+					android:textStyle="bold"
+					android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+			/>
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="Comment shouaitez-vous ajouter une photo ?"
+					android:layout_gravity="top"
+					android:gravity="center"
+					android:textColor="@color/grey_50"
+					android:textSize="14dp"
+					android:maxLines="2"
+					android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+			/>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_margin="4dp"
+			>
+
+				<Button
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:layout_height="35dp"
+						android:text="Appareil"
+						android:textColor="@color/white"
+						android:background="@drawable/round_button"
+						android:id="@+id/addByCamera"
+						android:layout_margin="10dp"
+						android:textSize="12dp"
+				/>
+
+				<Button
+						android:layout_width="0dp"
+						android:layout_height="35dp"
+						android:layout_weight="1"
+						android:background="@drawable/round_button"
+						android:textColor="@color/white"
+						android:text="Galerie"
+						android:textSize="12dp"
+						android:id="@+id/addByGalerie"
+						android:layout_margin="10dp"
+				/>
+			</LinearLayout>
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
+</RelativeLayout>

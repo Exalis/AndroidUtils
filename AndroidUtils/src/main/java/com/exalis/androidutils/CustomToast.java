@@ -2,6 +2,7 @@ package com.exalis.androidutils;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,25 @@ public class CustomToast {
         toast.show();
     }
 
+    public static void makeInformativeToast(Activity activity, String message){
+        Toast toast = getToast(activity);
+
+        setMessage(toast, message);
+        setBackgroundColor(toast, activity.getResources().getColor(R.color.white));
+        setMessageColor(toast, R.color.black);
+        removeIcon(toast);
+
+        toast.show();
+    }
+
+    private static void setMessageColor(Toast toast, int color) {
+        ((TextView)toast.getView().findViewById(R.id.message)).setTextColor(color);
+    }
+
+    private static void removeIcon(Toast toast) {
+        ((ImageView)toast.getView().findViewById(R.id.icon)).setVisibility(View.GONE);
+    }
+
     public static Toast getToast(Activity activity){
         Toast toast = new Toast(activity);
         toast.setView(activity.getLayoutInflater().inflate(R.layout.toast_icon_text, null));
@@ -48,6 +68,4 @@ public class CustomToast {
     public static void setIcon(Toast toast, Drawable drawable){
         ((ImageView)toast.getView().findViewById(R.id.icon)).setImageDrawable(drawable);
     }
-
-
 }

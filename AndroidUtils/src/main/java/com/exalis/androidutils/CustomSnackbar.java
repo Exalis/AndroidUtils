@@ -2,7 +2,6 @@ package com.exalis.androidutils;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -38,6 +37,25 @@ public class CustomSnackbar {
             addOffset(offsetValues, snackbar);
 
         snackbar.show();
+    }
+
+    public static void makeInformativeSnackbar(String message, Activity activity, View parentView,
+                                           Integer... offsetValues) {
+        Snackbar snackbar = getSnackBar(activity, parentView);
+
+        setSnackbarText(message, snackbar);
+        setSnackbarBackgroundColor(activity, snackbar, R.color.white);
+        removeIconFromSnackbar(snackbar);
+
+        if(offsetValues.length > 0)
+            addOffset(offsetValues, snackbar);
+
+        snackbar.show();
+    }
+
+    private static void removeIconFromSnackbar(Snackbar snackbar) {
+        ((ImageView) snackbar.getView().findViewById(R.id.icon))
+                .setVisibility(View.GONE);
     }
 
     public static void setSnackbarBackgroundColor(Activity activity, Snackbar snackbar, int color) {

@@ -1,28 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent"
+		xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:layout_margin="25dp">
+		android:layout_margin="25dp"
+		android:id="@+id/mainView">
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
 
-	<Button android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:id="@+id/btnSucess"
-	        android:text="Make Success Snackbar"/>
+		<Button android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/btnSucess"
+		        android:text="Make Success Snackbar"
+		        android:background="@drawable/round_button"
+		        android:layout_margin="5dp"/>
 
-	<Button android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:id="@+id/btnFailure"
-	        android:text="Make Failure Snackbar"/>
+		<Button android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/btnFailure"
+		        android:text="Make Failure Snackbar"
+		        android:background="@drawable/round_button"
+		        android:layout_margin="5dp"/>
 
-	<Button android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:id="@+id/btnSucessToast"
-	        android:text="Make Success Toast"/>
+		<Button android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/btnSucessToast"
+		        android:text="Make Success Toast"
+		        android:background="@drawable/round_button"
+		        android:layout_margin="5dp"/>
 
-	<Button android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:id="@+id/btnFailureToast"
-	        android:text="Make Failure Toast"/>
-</LinearLayout>
+		<Button android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/btnFailureToast"
+		        android:text="Make Failure Toast"
+		        android:background="@drawable/round_button"
+		        android:layout_margin="5dp"/>
+
+		<Button android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/btnPictureChoosing"
+		        android:text="Choose way of taking pic"
+		        android:background="@drawable/round_button"
+		        android:layout_margin="5dp"/>
+
+		<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="250dp"
+				android:src="@drawable/camera"
+				android:id="@+id/image"
+				android:visibility="gone"/>
+
+	</LinearLayout>
+
+</ScrollView>
