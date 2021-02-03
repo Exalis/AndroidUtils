@@ -7,11 +7,17 @@
 		android:layout_margin="25dp">
 
 	<ImageView android:layout_width="match_parent"
+	           android:layout_height="150dp"
+	           android:src="@drawable/round"
+	/>
+
+	<ImageView android:layout_width="match_parent"
 	           android:layout_height="80dp"
 	           android:src="@drawable/search_image"
 	           android:tint="@color/colorPrimaryBlue"
 	           tools:ignore="UseAppTint"
-	           android:elevation="10dp"/>
+	           android:elevation="10dp"
+	/>
 
 	<androidx.cardview.widget.CardView
 			android:layout_width="match_parent"
