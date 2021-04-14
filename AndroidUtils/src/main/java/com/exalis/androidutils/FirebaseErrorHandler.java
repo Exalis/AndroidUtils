@@ -18,7 +18,10 @@ public class FirebaseErrorHandler {
     }
 
     public void logErrorInDatabase(Exception error){
-        firestoreInstance.collection("Errors").document(getRandomUUID())
+        firestoreInstance.collection("Errors")
+                .document(getCurrentUserUID())
+                .collection("UserErrors")
+                .document(getRandomUUID())
                 .set(getHashMapDataForLogging(error));
     }
 
