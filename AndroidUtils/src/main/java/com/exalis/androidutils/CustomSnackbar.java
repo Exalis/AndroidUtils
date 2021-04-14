@@ -1,7 +1,8 @@
 package com.exalis.androidutils;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -11,13 +12,13 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class CustomSnackbar {
 
-    public static void makeSuccessSnackbar(String message, Activity activity, View parentView,
+    public static void makeSuccessSnackbar(String message, Context context, View parentView,
                                            Integer... offsetValues) {
-        Snackbar snackbar = getSnackBar(activity, parentView);
+        Snackbar snackbar = getSnackBar(context, parentView);
 
-        setSnackbarIcon(activity, snackbar, R.drawable.check);
+        setSnackbarIcon(context, snackbar, R.drawable.check);
         setSnackbarText(message, snackbar);
-        setSnackbarBackgroundColor(activity, snackbar, R.color.colorSuccess);
+        setSnackbarBackgroundColor(context, snackbar, R.color.colorSuccess);
 
         if(offsetValues.length > 0)
             addOffset(offsetValues, snackbar);
@@ -25,13 +26,13 @@ public class CustomSnackbar {
         snackbar.show();
     }
 
-    public static void makeFailureSnackbar(String message, Activity activity, View parentView,
+    public static void makeFailureSnackbar(String message, Context context, View parentView,
                                            Integer... offsetValues) {
-        Snackbar snackbar = getSnackBar(activity, parentView);
+        Snackbar snackbar = getSnackBar(context, parentView);
 
-        setSnackbarIcon(activity, snackbar, R.drawable.cross);
+        setSnackbarIcon(context, snackbar, R.drawable.cross);
         setSnackbarText(message, snackbar);
-        setSnackbarBackgroundColor(activity, snackbar, R.color.colorFailure);
+        setSnackbarBackgroundColor(context, snackbar, R.color.colorFailure);
 
         if(offsetValues.length > 0)
             addOffset(offsetValues, snackbar);
@@ -39,12 +40,12 @@ public class CustomSnackbar {
         snackbar.show();
     }
 
-    public static void makeInformativeSnackbar(String message, Activity activity, View parentView,
+    public static void makeInformativeSnackbar(String message, Context context, View parentView,
                                            Integer... offsetValues) {
-        Snackbar snackbar = getSnackBar(activity, parentView);
+        Snackbar snackbar = getSnackBar(context, parentView);
 
         setSnackbarText(message, snackbar);
-        setSnackbarBackgroundColor(activity, snackbar, R.color.white);
+        setSnackbarBackgroundColor(context, snackbar, R.color.white);
         removeIconFromSnackbar(snackbar);
 
         if(offsetValues.length > 0)
@@ -58,14 +59,14 @@ public class CustomSnackbar {
                 .setVisibility(View.GONE);
     }
 
-    public static void setSnackbarBackgroundColor(Activity activity, Snackbar snackbar, int color) {
+    public static void setSnackbarBackgroundColor(Context context, Snackbar snackbar, int color) {
         ((CardView) snackbar.getView().findViewById(R.id.parent_view))
-                .setCardBackgroundColor(activity.getResources().getColor(color));
+                .setCardBackgroundColor(context.getResources().getColor(color));
     }
 
-    public static void setSnackbarIcon(Activity activity, Snackbar snackbar, int drawable) {
+    public static void setSnackbarIcon(Context context, Snackbar snackbar, int drawable) {
         ((ImageView) snackbar.getView().findViewById(R.id.icon))
-                .setImageDrawable(activity.getResources().getDrawable(drawable));
+                .setImageDrawable(context.getResources().getDrawable(drawable));
     }
 
     public static void setSnackbarText(String text, Snackbar snackbar) {
@@ -91,11 +92,11 @@ public class CustomSnackbar {
         return 0;
     }
 
-    public static Snackbar getSnackBar(Activity activity, View parentView) {
+    public static Snackbar getSnackBar(Context context, View parentView) {
         final Snackbar snackbar = Snackbar.make(parentView, "", Snackbar.LENGTH_LONG);
         snackbar.getView().setBackgroundColor(Color.TRANSPARENT);
 
-        View custom_view = activity.getLayoutInflater().inflate(R.layout.toast_icon_text, null);
+        View custom_view = LayoutInflater.from(context).inflate(R.layout.toast_icon_text, null);
 
         final FrameLayout snackBarView = (FrameLayout) snackbar.getView();
         snackBarView.addView(custom_view, 0);
@@ -110,5 +111,4 @@ public class CustomSnackbar {
         snackbar.getView().setLayoutParams(params);
 
     }
-
 }
