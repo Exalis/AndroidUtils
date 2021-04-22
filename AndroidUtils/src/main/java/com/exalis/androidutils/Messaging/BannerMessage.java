@@ -27,6 +27,7 @@ public class BannerMessage {
     private boolean isPermanent = false;
     private boolean comesFromBottom = false;
     int bottomMargin;
+    private boolean hasAlreadyAParentView = false;
 
     public enum BannerMessageTheme{
         SUCCESS,
@@ -63,7 +64,11 @@ public class BannerMessage {
         }
 
         bannerBinding.getRoot().setLayoutParams(params);
+
+        if(hasAlreadyAParentView) return;
+
         parentView.addView(bannerBinding.getRoot());
+        hasAlreadyAParentView = true;
     }
 
     public void setTitle(String title) {
