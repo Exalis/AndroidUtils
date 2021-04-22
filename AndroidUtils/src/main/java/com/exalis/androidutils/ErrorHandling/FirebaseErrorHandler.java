@@ -1,4 +1,4 @@
-package com.exalis.androidutils;
+package com.exalis.androidutils.ErrorHandling;
 
 import android.util.Log;
 import com.google.android.gms.tasks.Task;

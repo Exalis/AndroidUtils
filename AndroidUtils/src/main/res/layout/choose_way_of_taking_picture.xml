@@ -14,17 +14,17 @@
 	<ImageView android:layout_width="match_parent"
 	           android:layout_height="80dp"
 	           android:src="@drawable/search_image"
-	           android:tint="@color/colorPrimaryBlue"
+	           android:tint="@color/colorAccent"
 	           tools:ignore="UseAppTint"
 	           android:elevation="10dp"
 	/>
 
-	<androidx.cardview.widget.CardView
+	<com.google.android.material.card.MaterialCardView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			xmlns:app="http://schemas.android.com/apk/res-auto"
 			app:cardCornerRadius="15dp"
-			app:cardBackgroundColor="@color/white"
+			app:cardBackgroundColor="@color/colorBackground"
 			android:elevation="1dp"
 			android:layout_marginTop="40dp">
 
@@ -69,30 +69,24 @@
 					android:layout_margin="4dp"
 			>
 
-				<Button
+				<com.google.android.material.button.MaterialButton
 						android:layout_width="0dp"
 						android:layout_weight="1"
-						android:layout_height="35dp"
+						android:layout_height="match_parent"
 						android:text="Appareil"
-						android:textColor="@color/white"
-						android:background="@drawable/round_button"
 						android:id="@+id/addByCamera"
 						android:layout_margin="10dp"
-						android:textSize="12dp"
 				/>
 
-				<Button
+				<com.google.android.material.button.MaterialButton
 						android:layout_width="0dp"
-						android:layout_height="35dp"
+						android:layout_height="match_parent"
 						android:layout_weight="1"
-						android:background="@drawable/round_button"
-						android:textColor="@color/white"
 						android:text="Galerie"
-						android:textSize="12dp"
 						android:id="@+id/addByGalerie"
 						android:layout_margin="10dp"
 				/>
 			</LinearLayout>
 		</LinearLayout>
-	</androidx.cardview.widget.CardView>
+	</com.google.android.material.card.MaterialCardView>
 </RelativeLayout>

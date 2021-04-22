@@ -1,50 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
 		android:layout_margin="25dp"
 		android:id="@+id/mainView">
+
 	<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
 
-		<Button android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:id="@+id/btnSucess"
-		        android:text="Make Success Snackbar"
-		        android:background="@drawable/round_button"
-		        android:layout_margin="5dp"/>
-
-		<Button android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:id="@+id/btnFailure"
-		        android:text="Make Failure Snackbar"
-		        android:background="@drawable/round_button"
-		        android:layout_margin="5dp"/>
-
-		<Button android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:id="@+id/btnSucessToast"
-		        android:text="Make Success Toast"
-		        android:background="@drawable/round_button"
-		        android:layout_margin="5dp"/>
-
-		<Button android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:id="@+id/btnFailureToast"
-		        android:text="Make Failure Toast"
-		        android:background="@drawable/round_button"
-		        android:layout_margin="5dp"/>
-
-		<Button android:layout_width="match_parent"
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:id="@+id/btnPictureChoosing"
 		        android:text="Choose way of taking pic"
-		        android:background="@drawable/round_button"
 		        android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/bannerSuccess"
+		        android:text="Success"
+		        android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/bannerWarning"
+				android:text="Warning"
+				android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/bannerInformation"
+				android:text="Information"
+				android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/bannerError"
+				android:text="Error"
+				android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/bannerSuccessBottom"
+				android:text="Success Bottom"
+				android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/bannerWarningBottom"
+				android:text="Warning Bottom"
+				android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/bannerInformationBottom"
+				android:text="Information Bottom"
+				android:layout_margin="5dp"/>
+
+		<com.google.android.material.button.MaterialButton
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/bannerErrorBottom"
+				android:text="Error Bottom"
+				android:layout_margin="5dp"/>
 
 		<ImageView
 				android:layout_width="match_parent"
@@ -55,4 +93,4 @@
 
 	</LinearLayout>
 
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

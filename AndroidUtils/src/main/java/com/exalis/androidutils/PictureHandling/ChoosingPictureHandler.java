@@ -1,4 +1,4 @@
-package com.exalis.androidutils;
+package com.exalis.androidutils.PictureHandling;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.widget.Button;
+import com.exalis.androidutils.R;
 
 import java.io.IOException;
 
