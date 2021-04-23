@@ -124,6 +124,7 @@ public class BannerMessage {
     public void addButton(){
         bannerBinding.bannerButton.setVisibility(View.VISIBLE);
     }
+    
     public void removeButton(){
         bannerBinding.bannerButton.setVisibility(View.GONE);
     }
