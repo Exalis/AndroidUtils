@@ -96,6 +96,10 @@ public class BannerMessage {
         bannerBinding.bannerButton.setOnClickListener(clickListener);
     }
 
+    public void setButtonText(String text){
+        bannerBinding.bannerButton.setText(text);
+    }
+
     public void showBanner() {
         createView();
         ViewAnimation.expand(bannerBinding.getRoot());
