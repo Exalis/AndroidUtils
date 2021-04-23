@@ -92,6 +92,10 @@ public class BannerMessage {
         this.comesFromBottom = comesFromBottom;
     }
 
+    public void setButtonAction(View.OnClickListener clickListener){
+        bannerBinding.bannerButton.setOnClickListener(clickListener);
+    }
+
     public void showBanner() {
         createView();
         ViewAnimation.expand(bannerBinding.getRoot());
