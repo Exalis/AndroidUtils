@@ -142,7 +142,7 @@ public class BannerMessage {
                 setBackground(context.getResources().getColor(R.color.colorError));
                 //Icon
                 setIcon(context.getDrawable(R.drawable.error_icon));
-                bannerBinding.icon.setColorFilter(context.getResources().getColor(R.color.colorOnError));
+                changeIconColor(R.color.colorOnError);
                 //Text
                 changeTextColors(R.color.colorOnError);
                 //Button
@@ -152,7 +152,7 @@ public class BannerMessage {
                 setBackground(context.getResources().getColor(R.color.colorSuccess));
                 //Icon
                 setIcon(context.getDrawable(R.drawable.success_icon));
-                bannerBinding.icon.setColorFilter(context.getResources().getColor(R.color.colorOnSuccess));
+                changeIconColor(R.color.colorOnSuccess);
                 //Text
                 changeTextColors(R.color.colorOnSuccess);
                 //Button
@@ -162,7 +162,7 @@ public class BannerMessage {
                 setBackground(context.getResources().getColor(R.color.colorWarning));
                 //Icon
                 setIcon(context.getDrawable(R.drawable.warning_icon));
-                bannerBinding.icon.setColorFilter(context.getResources().getColor(R.color.colorOnWarning));
+                changeIconColor(R.color.colorOnWarning);
                 //Text
                 changeTextColors(R.color.colorOnWarning);
                 //Button
@@ -172,7 +172,7 @@ public class BannerMessage {
                 setBackground(context.getResources().getColor(R.color.colorInformation));
                 //Icon
                 setIcon(context.getDrawable(R.drawable.information_icon));
-                bannerBinding.icon.setColorFilter(context.getResources().getColor(R.color.colorOnInformation));
+                changeIconColor(R.color.colorOnInformation);
                 //Text
                 changeTextColors(R.color.colorOnInformation);
                 //Button
@@ -183,7 +183,7 @@ public class BannerMessage {
                     setBackground(context.getResources().getColor(customColorBackground));
                     //Icon
                     setIcon(context.getDrawable(icon));
-                    bannerBinding.icon.setColorFilter(context.getResources().getColor(customColorOnBackground));
+                    changeIconColor(customColorOnBackground);
                     //Text
                     changeTextColors(customColorOnBackground);
                     //Button
@@ -195,12 +195,16 @@ public class BannerMessage {
         }
     }
 
-    private void changeButtonColors(int backgroundColor, int colorOnThisBackground) {
+    public void changeIconColor(int p) {
+        bannerBinding.icon.setColorFilter(context.getResources().getColor(p));
+    }
+
+    public void changeButtonColors(int backgroundColor, int colorOnThisBackground) {
         bannerBinding.bannerButton.setBackgroundColor(context.getResources().getColor(backgroundColor));
         bannerBinding.bannerButton.setTextColor(context.getResources().getColor(colorOnThisBackground));
     }
 
-    private void changeTextColors(int color) {
+    public void changeTextColors(int color) {
         bannerBinding.bannerTitleContent.setTextColor(context.getResources().getColor(color));
         bannerBinding.bannerTextContent.setTextColor(context.getResources().getColor(color));
     }
@@ -211,4 +215,6 @@ public class BannerMessage {
         this.icon = icon;
         hasDefinedCustomTheme = true;
     }
+
+    public BannerBinding getBannerBinding() {return bannerBinding;}
 }
