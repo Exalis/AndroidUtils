@@ -61,7 +61,7 @@ public class BannerMessage {
                 CoordinatorLayout.LayoutParams.MATCH_PARENT,
                 100
         );
-
+        Log.i(TAG, "createView: " + comesFromBottom);
         if(comesFromBottom){
             params.gravity = Gravity.BOTTOM;
             params.setMargins(20, 20, 20, bottomMargin);

@@ -1,14 +1,17 @@
 <RelativeLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:id="@+id/popup"
 		xmlns:android="http://schemas.android.com/apk/res/android"
 >
 	<com.google.android.material.card.MaterialCardView
 			app:cardCornerRadius="10dp"
+			android:layout_margin="5dp"
 			app:cardBackgroundColor="@color/colorWarning"
+			android:background="@color/colorWarning"
 			android:id="@+id/banner"
 			android:layout_width="match_parent"
-			android:layout_height="115dp"
+			android:layout_height="wrap_content"
 			android:orientation="vertical"
 			android:padding="3dp"
 			xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,7 +24,7 @@
 
 			<ImageView
 					android:id="@+id/icon"
-					android:layout_width="66dp"
+					android:layout_width="67dp"
 					android:layout_height="67dp"
 					android:src="@drawable/warning_icon"
 					android:tint="@color/colorOnWarning"
@@ -31,20 +34,24 @@
 
 			<LinearLayout
 					android:layout_width="0dp"
-					android:layout_height="match_parent"
+					android:layout_height="wrap_content"
 					android:layout_weight="1"
 					android:orientation="vertical"
+					android:layout_marginTop="5dp"
+					android:layout_marginBottom="5dp"
 			>
 
 				<TextView
 						android:layout_width="match_parent"
 						android:layout_gravity="start"
-						android:layout_height="0dp"
-						android:layout_weight="1"
-						android:text="Confirmation"
+						android:layout_height="wrap_content"
+						android:text="Message de succès"
 						android:textStyle="bold"
 						android:gravity="bottom|start"
-						android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+						android:textSize="18sp"
+						android:autoSizeTextType="uniform"
+						android:maxLines="1"
+						android:textAppearance="@style/TextAppearance.AppCompat.Title"
 						android:textColor="@color/colorOnWarning"
 						android:id="@+id/bannerTitleContent"
 						android:layout_marginBottom="3dp"
@@ -53,8 +60,7 @@
 				<TextView
 						android:layout_width="match_parent"
 						android:layout_gravity="start"
-						android:layout_height="0dp"
-						android:layout_weight="1"
+						android:layout_height="wrap_content"
 						android:textSize="12sp"
 						android:layout_marginBottom="5dp"
 						android:text="Recipe saved successfully into your favorite, you can read it when offline"
@@ -65,21 +71,20 @@
 			</LinearLayout>
 
 			<com.google.android.material.button.MaterialButton
-					android:layout_width="0dp"
-					android:layout_weight="0.5"
-					android:layout_height="60dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
 					android:layout_gravity="center"
 					android:onClick="onBannerActionClicked"
-					android:text="Demander à ma ville"
-					android:autoSizeTextType="uniform"
-					android:textColor="@color/colorWarning"
+					android:text="S'inscrire"
+					android:textColor="@color/colorOnWarning"
+					android:textSize="10sp"
 					android:maxLines="1"
-					style="@style/Widget.MaterialComponents.Button"
 					app:backgroundTint="@color/white"
 					android:id="@+id/bannerButton"
-					android:layout_marginStart="10dp"
 					android:layout_marginEnd="10dp"
-					android:visibility="gone"
+					android:layout_marginStart="10dp"
+					android:visibility="visible"
+					style="@style/Widget.MaterialComponents.Button.OutlinedButton"
 			/>
 
 		</LinearLayout>
@@ -87,4 +92,3 @@
 	</com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>
-
