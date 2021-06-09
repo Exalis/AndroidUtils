@@ -73,6 +73,7 @@
 					android:text="Demander à ma ville"
 					android:autoSizeTextType="uniform"
 					android:textColor="@color/colorWarning"
+					android:maxLines="1"
 					style="@style/Widget.MaterialComponents.Button"
 					app:backgroundTint="@color/white"
 					android:id="@+id/bannerButton"
