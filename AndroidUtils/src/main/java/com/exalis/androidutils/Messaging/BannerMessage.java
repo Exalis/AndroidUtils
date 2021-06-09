@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,13 @@ import androidx.cardview.widget.CardView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.exalis.androidutils.R;
 import com.exalis.androidutils.ViewAnimation;
-import com.exalis.androidutils.databinding.BannerBinding;
+import com.exalis.androidutils.databinding.*;
 
 import java.util.HashMap;
 
 public class BannerMessage {
 
+    private static final String TAG = "BannerMessage";
     private ViewGroup parentView;
     private BannerBinding bannerBinding;
     private Context context;
@@ -28,12 +30,16 @@ public class BannerMessage {
     private boolean comesFromBottom = false;
     int bottomMargin;
     private boolean hasAlreadyAParentView = false;
+    boolean hasDefinedCustomTheme = false;
+
+    private int customColorBackground, customColorOnBackground, icon;
 
     public enum BannerMessageTheme{
         SUCCESS,
         INFORMATION,
         ERROR,
-        WARNING
+        WARNING,
+        CUSTOM
     }
 
     public BannerMessage(Context context, ViewGroup parentView) {
@@ -80,7 +86,7 @@ public class BannerMessage {
     }
 
     public void setBackground(int color) {
-        bannerBinding.getRoot().setCardBackgroundColor(color);
+        bannerBinding.banner.setCardBackgroundColor(color);
     }
 
     public void setClosingDelay(int CLOSING_DELAY) {
@@ -172,6 +178,20 @@ public class BannerMessage {
                 //Button
                 changeButtonColors(R.color.colorOnInformation, R.color.colorInformation);
                 break;
+            case CUSTOM:
+                if(hasDefinedCustomTheme){
+                    setBackground(context.getResources().getColor(customColorBackground));
+                    //Icon
+                    setIcon(context.getDrawable(icon));
+                    bannerBinding.icon.setColorFilter(context.getResources().getColor(customColorOnBackground));
+                    //Text
+                    changeTextColors(customColorOnBackground);
+                    //Button
+                    changeButtonColors(R.color.colorOnInformation, customColorBackground);
+                }else{
+                    Log.e(TAG, "setTheme: le theme custom n'a pas été défini" );
+                }
+                break;
         }
     }
 
@@ -183,5 +203,12 @@ public class BannerMessage {
     private void changeTextColors(int color) {
         bannerBinding.bannerTitleContent.setTextColor(context.getResources().getColor(color));
         bannerBinding.bannerTextContent.setTextColor(context.getResources().getColor(color));
+    }
+
+    public void setCustomTheme(int customColorBackground, int customColorOnBackground, int icon){
+        this.customColorBackground = customColorBackground;
+        this.customColorOnBackground = customColorOnBackground;
+        this.icon = icon;
+        hasDefinedCustomTheme = true;
     }
 }

@@ -9,8 +9,10 @@ import android.graphics.Color;
 import android.graphics.ImageDecoder;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.widget.Button;
+import androidx.annotation.RequiresApi;
 import com.exalis.androidutils.R;
 
 import java.io.IOException;
@@ -55,13 +57,16 @@ public class ChoosingPictureHandler {
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.TITLE, "New Picture");
         values.put(MediaStore.Images.Media.DESCRIPTION, "From your Camera");
+
         imageUri = activity.getContentResolver().insert(
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         activity.startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     public Bitmap getBitmapResult(int requestCode, int resultCode, Intent data) throws IOException {
         switch (requestCode){
             case PICK_IMAGE_REQUEST:
@@ -73,6 +78,7 @@ public class ChoosingPictureHandler {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     private Bitmap onImageCaptureResult(int resultCode, Intent data)
             throws IllegalStateException, IOException {
         if(resultCode == RESULT_OK){
@@ -82,6 +88,7 @@ public class ChoosingPictureHandler {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     private Bitmap onPickImageResult(int resultCode, Intent data) throws IOException {
         if(resultCode == RESULT_OK){
             imageUri = data.getData();
@@ -92,10 +99,12 @@ public class ChoosingPictureHandler {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     public static Bitmap decodeBitmapFromUri(Activity activity, Uri uri) throws IOException {
         ImageDecoder.Source source =
                 ImageDecoder.createSource(activity.getContentResolver(), uri);
         Bitmap bitmap = ImageDecoder.decodeBitmap(source);
+
         return bitmap;
     }
 

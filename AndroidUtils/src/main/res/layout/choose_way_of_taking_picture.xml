@@ -14,7 +14,7 @@
 	<ImageView android:layout_width="match_parent"
 	           android:layout_height="80dp"
 	           android:src="@drawable/search_image"
-	           android:tint="@color/colorAccent"
+	           android:tint="@color/colorSecondary"
 	           tools:ignore="UseAppTint"
 	           android:elevation="10dp"
 	/>
@@ -25,6 +25,7 @@
 			xmlns:app="http://schemas.android.com/apk/res-auto"
 			app:cardCornerRadius="15dp"
 			app:cardBackgroundColor="@color/colorBackground"
+			android:background="@color/colorBackground"
 			android:elevation="1dp"
 			android:layout_marginTop="40dp">
 
@@ -56,7 +57,7 @@
 					android:text="Comment shouaitez-vous ajouter une photo ?"
 					android:layout_gravity="top"
 					android:gravity="center"
-					android:textColor="@color/grey_50"
+					android:textColor="@color/colorOnBackground"
 					android:textSize="14dp"
 					android:maxLines="2"
 					android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
