@@ -187,7 +187,7 @@ public class BannerMessage {
                     //Text
                     changeTextColors(customColorOnBackground);
                     //Button
-                    changeButtonColors(R.color.colorOnInformation, customColorBackground);
+                    changeButtonColors(customColorOnBackground, customColorBackground);
                 }else{
                     Log.e(TAG, "setTheme: le theme custom n'a pas été défini" );
                 }

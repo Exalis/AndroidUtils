@@ -67,10 +67,10 @@
 			<com.google.android.material.button.MaterialButton
 					android:layout_width="0dp"
 					android:layout_weight="0.5"
-					android:layout_height="wrap_content"
+					android:layout_height="60dp"
 					android:layout_gravity="center"
 					android:onClick="onBannerActionClicked"
-					android:text="Fermer"
+					android:text="Demander à ma ville"
 					android:autoSizeTextType="uniform"
 					android:textColor="@color/colorWarning"
 					style="@style/Widget.MaterialComponents.Button"
